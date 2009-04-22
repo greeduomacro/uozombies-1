@@ -649,8 +649,9 @@ namespace Server.Misc
 
 				pm.Profession = args.Profession;
 
-				if ( pm.AccessLevel == AccessLevel.Player && ((Account)pm.Account).Young )
-					young = pm.Young = true;
+                if (pm.AccessLevel == AccessLevel.Player && ((Account)pm.Account).Young)
+                    //young = pm.Young = true;
+                    young = pm.Young = false; // NKR - 21/04/2009 - Mudei aqui para tirar o young status 
 			}
 
 			SetName( newChar, args.Name );

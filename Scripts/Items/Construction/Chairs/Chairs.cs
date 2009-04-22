@@ -96,6 +96,13 @@ namespace Server.Items
 			if ( Weight == 6.0 )
 				Weight = 20.0;
 		}
+		
+		//ALTERADO PELO VISION - tentar transformar em uma cadeira q vira 4 maças
+		public override void OnDoubleClick(Mobile from)
+		{
+			this.Delete();
+			from.AddToBackpack(new Mace());
+		}
 	}
 
 	[Furniture]

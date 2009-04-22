@@ -108,6 +108,7 @@ namespace Server.Items
                 from.AddToBackpack(new Club());
                 from.AddToBackpack(new Club());
                 from.AddToBackpack(new Club());
+                from.SendMessage("You have broken furniture into four clubs.");
             }
             else
             {

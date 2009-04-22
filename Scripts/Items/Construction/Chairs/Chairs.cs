@@ -1,4 +1,5 @@
 using System;
+using Server.Network;
 
 namespace Server.Items
 {
@@ -100,8 +101,18 @@ namespace Server.Items
 		//ALTERADO PELO VISION - tentar transformar em uma cadeira q vira 4 maças
 		public override void OnDoubleClick(Mobile from)
 		{
-			this.Delete();
-			from.AddToBackpack(new Mace());
+            if (from.InRange(GetWorldLocation(), 1))
+            {
+                this.Delete();
+                from.AddToBackpack(new Club());
+                from.AddToBackpack(new Club());
+                from.AddToBackpack(new Club());
+                from.AddToBackpack(new Club());
+            }
+            else
+            {
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); 
+            }
 		}
 	}
 

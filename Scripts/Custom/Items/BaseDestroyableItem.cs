@@ -205,7 +205,7 @@ namespace Server.Items
             }
             else if (Hits <= 0)
             {
-                Destroy();
+                cDestroy();
                 return;
             }
 
@@ -344,6 +344,13 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
+            Attack(from);
+
+            base.OnDoubleClick(from);
+        }
+
+        protected void Attack(Mobile from)
+        {
             PlayerMobile pm = from as PlayerMobile;
 
             if (pm != null)
@@ -357,7 +364,7 @@ namespace Server.Items
                 else
                 {
                     ProvideEntity();
-
+            
                     if (m_Child != null && !m_Child.Deleted)
                     {
                         m_Child.Update();
@@ -365,9 +372,7 @@ namespace Server.Items
                         pm.Combatant = m_Child;
                     }
                 }
-            }
-
-            base.OnDoubleClick(from);
+            } 
         }
 
         public override bool OnDragLift(Mobile from)

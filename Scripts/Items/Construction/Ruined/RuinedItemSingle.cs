@@ -291,7 +291,7 @@ namespace Server.Items
 		[Constructable]
 		public WoodDebris() : base( 0xC2D )
 		{
-			Movable = false;
+			Movable = true;
 		}
 
 		public WoodDebris( Serial serial ) : base( serial )

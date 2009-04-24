@@ -205,7 +205,7 @@ namespace Server.Items
             }
             else if (Hits <= 0)
             {
-                cDestroy();
+                Destroy();
                 return;
             }
 
@@ -239,7 +239,8 @@ namespace Server.Items
                 }
                 else
                 {
-                    Static rubble = new Static(m_DestroyedID);
+                    Rubble rubble = new Rubble(m_DestroyedID, this.Name);
+                    //Static rubble = new Static(m_DestroyedID);
 
                     if (rubble != null && !rubble.Deleted && this.Map != null && this.Map != Map.Internal)
                         rubble.MoveToWorld(this.Location, this.Map);
@@ -476,8 +477,8 @@ namespace Server.Items
 				
 			Name = null;
 
-			Body = 803;
-			BodyValue = 803;
+            Body = 906;
+            BodyValue = 906;
 			Hue = 0;
 			BaseSoundID = 0;
 			Fame = 0;

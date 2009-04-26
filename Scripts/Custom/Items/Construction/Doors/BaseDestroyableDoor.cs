@@ -544,7 +544,7 @@ namespace Server.Items
 
             m_Timer = new InternalTimer(this);
 
-            Movable = true;
+            Movable = false;
         }
 
         public BaseDestroyableDoor(Serial serial)
